@@ -61,6 +61,16 @@ class MainPageController: UIViewController {
             
             os_log("Editing Profile", log: OSLog.default, type: .debug)
             
+        case "storyTime":
+            os_log("Starting story", log: OSLog.default, type: .debug)
+            guard let navigationController = segue.destination as? UINavigationController else {
+                fatalError("Redirecting to wrong page \(segue.destination)")
+            }
+            guard let storyTime = navigationController.topViewController as? storyTimeViewController else {
+                fatalError("Redirecting to wrong page part 2 \(segue.destination)")
+            }
+            storyTime.player = self.player
+            
         case "shopping":
             os_log("Going to store", log: OSLog.default, type: .debug)
             

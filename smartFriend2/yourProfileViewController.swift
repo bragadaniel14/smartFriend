@@ -10,6 +10,8 @@ import UIKit
 import os.log
 
 class yourProfileViewController: UIViewController, genderTypeDelegate, UITextFieldDelegate {
+    
+    //MARK: GenderType Delegate Function
     func performButtonAction(with index: Int) {
         switch index{
         case 0:
@@ -25,17 +27,15 @@ class yourProfileViewController: UIViewController, genderTypeDelegate, UITextFie
     // Properties
     var player: Character?
     
+    //MARK: IB variables
     @IBOutlet weak var character: UIImageView!
     @IBOutlet weak var genderType: genderType!
-    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
-    
     @IBOutlet weak var doneButton: UIBarButtonItem!
-    
     @IBOutlet weak var imageCharacter: UIImageView!
     
-    
+    //MARK: IB Actions
     @IBAction func editName(_ sender: UIButton) {
         nameTextField.becomeFirstResponder()
     }
@@ -44,6 +44,7 @@ class yourProfileViewController: UIViewController, genderTypeDelegate, UITextFie
         dismiss(animated: true, completion: nil)
     }
     
+    //MARK: Private Functions
     private func sizePictureToScreen(){
         
         let screenSize: CGRect = UIScreen.main.bounds
@@ -81,6 +82,8 @@ class yourProfileViewController: UIViewController, genderTypeDelegate, UITextFie
         
     }
     
+    
+    //MARK: TextField delegate functions
     @objc func textFieldDidChange(_ textField: UITextField) {
         
         nameLabel.text = textField.text
