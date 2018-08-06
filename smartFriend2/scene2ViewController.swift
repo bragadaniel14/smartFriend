@@ -16,15 +16,16 @@ class scene2ViewController: UIViewController {
     
     //MARK: IB variables
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nextt: UIButton!
     
-    //MARK: IB Actions
-    @IBAction func moveStory(_ sender: UITapGestureRecognizer) {
-        print("Got here")
-        performSegue(withIdentifier: "toScene3", sender: self)
-    }
     
     
     //MARK: Private Functions
+    
+    @objc private func moveStory(button: UIButton) {
+        performSegue(withIdentifier: "toScene3", sender: self)
+    }
+    
     private func adjustImage(with index: Int?) {
         switch index{
         case 0:
@@ -38,10 +39,17 @@ class scene2ViewController: UIViewController {
         
     }
     
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        self.navigationController?.dismiss(animated: false, completion:nil);
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         adjustImage(with: player!.gender)
+        nextt.isEnabled = true
+        nextt.addTarget(self, action: #selector(scene2ViewController.moveStory(button:))
+            , for: UIControlEvents.touchUpInside)
+        
         // Do any additional setup after loading the view.
     }
 

@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "smartFriend2/genderType.swift"
-            timestampString = "553529407.414443"
+            timestampString = "554761422.800923"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "9"
@@ -26,12 +26,106 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "smartFriend2/yourProfileViewController.swift"
-            timestampString = "553733397.247859"
+            timestampString = "555266372.88236"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
             endingLineNumber = "40"
             landmarkName = "editName(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "smartFriend2/rewardsViewController.swift"
+            timestampString = "554816857.598478"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "rewardsViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "smartFriend2.rewardsViewController.index.getter : Swift.Int"
+                  moduleName = "smartFriend2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danielbraga/Desktop/smartFriend2/smartFriend2/rewardsViewController.swift"
+                  timestampString = "554794486.270452"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "97">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "smartFriend2.rewardsViewController.index.setter : Swift.Int"
+                  moduleName = "smartFriend2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danielbraga/Desktop/smartFriend2/smartFriend2/rewardsViewController.swift"
+                  timestampString = "554794486.274634"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "98">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "smartFriend2.rewardsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; smartFriend2.rewardsViewController"
+                  moduleName = "smartFriend2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danielbraga/Desktop/smartFriend2/smartFriend2/rewardsViewController.swift"
+                  timestampString = "554794486.27733"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "311">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "smartFriend2.rewardsViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;smartFriend2.rewardsViewController&gt;"
+                  moduleName = "smartFriend2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danielbraga/Desktop/smartFriend2/smartFriend2/rewardsViewController.swift"
+                  timestampString = "554794486.279808"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "231">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "smartFriend2/rewardsViewController.swift"
+            timestampString = "554816857.598621"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "setResults()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

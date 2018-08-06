@@ -16,7 +16,6 @@ class storyTimeViewController: UIViewController, UITextViewDelegate{
     var decision: Int = -1
     
     
-    
     //MARK: IB variables
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var john: UIImageView!
@@ -24,6 +23,7 @@ class storyTimeViewController: UIViewController, UITextViewDelegate{
     
     @IBOutlet weak var final1: UITextView!
     @IBOutlet weak var final2: UITextView!
+    
     @IBOutlet weak var text1: UITextView!
     @IBOutlet weak var text2: UITextView!
     @IBOutlet weak var text3: UITextView!
@@ -39,6 +39,8 @@ class storyTimeViewController: UIViewController, UITextViewDelegate{
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
+    @IBOutlet weak var nextt: UIButton!
+    
     
     //MARK: IB functions
     @IBAction func cancel(_ sender: UIBarButtonItem) {
@@ -47,7 +49,6 @@ class storyTimeViewController: UIViewController, UITextViewDelegate{
     
     @IBAction func button1(_ sender: UIButton) {
         decision = 1
-        disableButtons()
         text8.text = "In the beginning it was very rare. Now it is almost every day."
         resize(textView: text8)
         onTop(of: john, with: text8)
@@ -55,9 +56,10 @@ class storyTimeViewController: UIViewController, UITextViewDelegate{
         resize(textView: text9)
         onTop(of: john, with: text9)
         final1.text = "That was a great attitude! You have shown to your friend that you care about him and that you are there for him"
-        final2.text = "You earned the Investigator outfit!"
-        onTop(of: investigator, with: final2)
+        let newSize = final1.sizeThatFits(CGSize(width: 240, height: 250))
+        final1.frame.size = newSize
         
+        disableButtons()
         branching()
         
     }
@@ -67,6 +69,8 @@ class storyTimeViewController: UIViewController, UITextViewDelegate{
         resize(textView: text8)
         onTop(of: john, with: text8)
         final1.text = "Good job trying to cheer John up! However, you should try to ask more questions first to understand how your friend is feeling.  Maybe he already tried to forget about the messages but he can’t."
+        let newSize = final1.sizeThatFits(CGSize(width: 240, height: 250))
+        final1.frame.size = newSize
         disableButtons()
         branching()
     }
@@ -76,17 +80,21 @@ class storyTimeViewController: UIViewController, UITextViewDelegate{
         resize(textView: text8)
         onTop(of: john, with: text8)
         final1.text = "You clearly care about your friend, but this solution is temporary. Your friend will receive more mean messages later and you won’t be there to help him forget about it."
+        let newSize = final1.sizeThatFits(CGSize(width: 240, height: 250))
+        final1.frame.size = newSize
         disableButtons()
         branching()
     }
     
     
     
-    @IBAction func moveStory(_ sender: UITapGestureRecognizer) {
+    
+    //MARK: Private functions
+    @objc private func moveStory(button: UIButton){
         index += 1
         print(index)
         switch(index){
-        
+            
         case 1:
             view.bringSubview(toFront: text2)
             view.sendSubview(toBack: text1)
@@ -121,6 +129,7 @@ class storyTimeViewController: UIViewController, UITextViewDelegate{
             button1.isEnabled = true
             button2.isEnabled = true
             button3.isEnabled = true
+            nextt.isEnabled = false
             
         default:
             print("Not doing much here")
@@ -128,12 +137,6 @@ class storyTimeViewController: UIViewController, UITextViewDelegate{
             
         }
     }
-    
-    
-    
-    //MARK: Private functions
-    
-    
     
     private func branching(){
         if(decision == 1){
@@ -146,7 +149,10 @@ class storyTimeViewController: UIViewController, UITextViewDelegate{
                 view.bringSubview(toFront: final1)
                 view.sendSubview(toBack: text9)
             } else if (index == 10){
+                print("time to print the ending")
+                onTop(of: investigator, with: final2)
                 view.bringSubview(toFront: final2)
+                //resize(textView: final2)
                 view.bringSubview(toFront: investigator)
                 view.sendSubview(toBack: final1)
             } else {
@@ -181,6 +187,7 @@ class storyTimeViewController: UIViewController, UITextViewDelegate{
         button1.isEnabled = false
         button2.isEnabled = false
         button3.isEnabled = false
+        nextt.isEnabled = true
     }
     
     private func resize(textView: UITextView){
@@ -213,6 +220,10 @@ class storyTimeViewController: UIViewController, UITextViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         adjustImage(with: player?.gender)
+        text1.addPikeOnView(side: .Bottom)
+        nextt.addTarget(self, action: #selector(storyTimeViewController.moveStory(button:))
+            , for: UIControlEvents.touchUpInside)
+        
 
         // Do any additional setup after loading the view.
     }
@@ -221,6 +232,8 @@ class storyTimeViewController: UIViewController, UITextViewDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
 
     
@@ -237,7 +250,6 @@ class storyTimeViewController: UIViewController, UITextViewDelegate{
         scene2.decision = self.decision
         
     }
-    
     
 
 }

@@ -27,6 +27,8 @@ class MainPageController: UIViewController {
         loadButtons()
         if let savedCharacter = loadCharacter() {
             player = savedCharacter
+        } else {
+            performSegue(withIdentifier: "editProfile", sender: self)
         }
     }
 
