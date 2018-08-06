@@ -15,11 +15,13 @@ class makeOverViewController: UIViewController {
     var decision: Int = -1
     var index = 0
     var secDecision = -1
+    var lastUsed: SpeechBubble?
     
     //MARK: IB Variables
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var centro: UIImageView!
     
     
     @IBOutlet weak var text1: UITextView!
@@ -37,42 +39,63 @@ class makeOverViewController: UIViewController {
         index += 1
         print(index)
         if(index == 1) {
-            view.sendSubview(toBack: text1)
-            view.bringSubview(toFront: text2)
-            resize(textView: text2)
-            onTop(of: imageView, with: text2)
+            view.sendSubview(toBack: lastUsed!)
+            let bubbleView = SpeechBubble(baseView: imageView, text: text2.text, fontSize: 20.0)
+            self.view.addSubview(bubbleView)
+            lastUsed = bubbleView
+            /*resize(textView: text2)
+            onTop(of: imageView, with: text2)*/
         }
         if(index == 2) {
-            view.sendSubview(toBack: text2)
-            resize(textView: text3)
+            view.sendSubview(toBack: lastUsed!)
+            let bubbleView = SpeechBubble(baseView: centro, text: text3.text, fontSize: 20.0)
+            self.view.addSubview(bubbleView)
+            lastUsed = bubbleView
+            /*resize(textView: text3)
             adjust(text: text3, on: background)
-            view.bringSubview(toFront: text3)
+            view.bringSubview(toFront: text3)*/
         }
         if(index == 3){
-            view.sendSubview(toBack: text3)
+            view.sendSubview(toBack: lastUsed!)
+            let bubbleView = SpeechBubble(baseView: imageView, text: text4.text, fontSize: 20.0)
+            self.view.addSubview(bubbleView)
+            lastUsed = bubbleView
+            /*view.sendSubview(toBack: text3)
             view.bringSubview(toFront: text4)
             resize(textView: text4)
-            onTop(of: imageView, with: text4)
+            onTop(of: imageView, with: text4)*/
         }
         if(index == 4){
-            view.sendSubview(toBack: text4)
+            view.sendSubview(toBack: lastUsed!)
+            let bubbleView = SpeechBubble(baseView: imageView, text: text5.text, fontSize: 20.0)
+            self.view.addSubview(bubbleView)
+            lastUsed = bubbleView
+            /*view.sendSubview(toBack: text4)
             view.bringSubview(toFront: text5)
             resize(textView: text5)
-            onTop(of: imageView, with: text5)
+            onTop(of: imageView, with: text5)*/
         }
         if(index == 5) {
-            view.sendSubview(toBack: text5)
+            view.sendSubview(toBack: lastUsed!)
+            let bubbleView = SpeechBubble(baseView: centro, text: text6.text, fontSize: 20.0)
+            self.view.addSubview(bubbleView)
+            lastUsed = bubbleView
+            /*view.sendSubview(toBack: text5)
             resize(textView: text6)
             adjust(text: text6, on: background)
-            view.bringSubview(toFront: text6)
+            view.bringSubview(toFront: text6)*/
         }
         if(index == 6) {
-            view.sendSubview(toBack: text6)
+            view.sendSubview(toBack: lastUsed!)
+            let bubbleView = SpeechBubble(baseView: centro, text: text7.text, fontSize: 20.0)
+            self.view.addSubview(bubbleView)
+            lastUsed = bubbleView
+            /*view.sendSubview(toBack: text6)
             resize(textView: text7)
             adjust(text: text7, on: background)
-            view.bringSubview(toFront: text7)
+            view.bringSubview(toFront: text7)*/
         }
-        if (index == 7){
+        if (index > 6){
             performSegue(withIdentifier: "finishStory", sender: self)
         }
         
@@ -120,8 +143,11 @@ class makeOverViewController: UIViewController {
             text4.text = "Well, I don’t know dad."
         }
         adjustImage(with: player!.gender)
-        resize(textView: text1)
-        onTop(of: imageView, with: text1)
+        let bubbleView = SpeechBubble(baseView: centro, text: text1.text, fontSize: 20.0)
+        self.view.addSubview(bubbleView)
+        lastUsed = bubbleView
+        /*resize(textView: text1)
+        onTop(of: imageView, with: text1)*/
         nextt.addTarget(self, action: #selector(makeOverViewController.moveStory(button:)), for: UIControlEvents.touchUpInside)
         // Do any additional setup after loading the view.
     }

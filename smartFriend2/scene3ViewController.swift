@@ -15,10 +15,12 @@ class scene3ViewController: UIViewController {
     var decision: Int = -1
     var index = 0
     var secDecision = -1
+    var lastUsed: SpeechBubble?
     
     //MARK: IB Variables
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var centro: UIImageView!
     
     @IBOutlet weak var text1: UITextView!
     @IBOutlet weak var text2: UITextView!
@@ -45,21 +47,27 @@ class scene3ViewController: UIViewController {
         secDecision = 2
         disableButtons()
         text5.text = "Eh…It was fun dad! I finished my work early and had some time to play with my classmates"
-        resize(textView: text5)
-        onTop(of: imageView, with: text5)
+        let bubbleView = SpeechBubble(baseView: imageView, text: text5.text, fontSize: 20.0)
+        self.view.addSubview(bubbleView)
+        lastUsed = bubbleView
+        /*resize(textView: text5)
+        onTop(of: imageView, with: text5)*/
         text6.text = "Great son! Now take a shower and go to bed because you have school tomorrow."
-        resize(textView: text6)
-        adjust(text: text6, on: background)
+        /*resize(textView: text6)
+        adjust(text: text6, on: background)*/
         
-        view.bringSubview(toFront: text5)
+        //view.bringSubview(toFront: text5)
         
     }
     @IBAction func action1(_ sender: UIButton) {
         secDecision = 1
         disableButtons()
         text5.text = "It was ok dad. But I am afraid something is wrong with John."
-        resize(textView: text5)
-        onTop(of: imageView, with: text5)
+        let bubbleView = SpeechBubble(baseView: imageView, text: text5.text, fontSize: 20.0)
+        self.view.addSubview(bubbleView)
+        lastUsed = bubbleView
+        //resize(textView: text5)
+        //onTop(of: imageView, with: text5)
         
         text6.text = "He seemed really sad at school today and I think it is because of some offensive messages he’s been getting on the internet."
         resize(textView: text6)
@@ -87,7 +95,7 @@ class scene3ViewController: UIViewController {
         adjust(text: text11, on: background)
         
         
-        view.bringSubview(toFront: text5)
+        //view.bringSubview(toFront: text5)
         
         
         
@@ -101,20 +109,28 @@ class scene3ViewController: UIViewController {
         switch(index){
             
         case 1:
-            resize(textView: text2)
+            let bubbleView = SpeechBubble(baseView: imageView, text: text2.text, fontSize: 20.0)
+            self.view.addSubview(bubbleView)
+            lastUsed = bubbleView
+            /*resize(textView: text2)
             onTop(of: imageView, with: text2)
-            view.bringSubview(toFront: text2)
+            view.bringSubview(toFront: text2)*/
             view.sendSubview(toBack: text1)
         
         case 2:
             text3.text = "Hello " + player!.name + "! How was your day?"
-            resize(textView: text3)
+            view.sendSubview(toBack: lastUsed!)
+            let bubbleView = SpeechBubble(baseView: centro, text: text3.text, fontSize: 20.0)
+            self.view.addSubview(bubbleView)
+            lastUsed = bubbleView
+            /*resize(textView: text3)
             adjust(text: text3, on: background)
             view.bringSubview(toFront: text3)
-            view.sendSubview(toBack: text2)
+            view.sendSubview(toBack: text2)*/
             
         case 3:
-            view.sendSubview(toBack: text3)
+            view.sendSubview(toBack: lastUsed!)
+            //view.sendSubview(toBack: text3)
             view.bringSubview(toFront: buttons)
             view.bringSubview(toFront: text4)
             button1.isEnabled = true
@@ -169,36 +185,64 @@ class scene3ViewController: UIViewController {
     private func branching(){
         if(secDecision == 1){
             if(index == 4){
-                view.sendSubview(toBack: text5)
-                view.bringSubview(toFront: text6)
+                self.view.sendSubview(toBack: lastUsed!)
+                let bubbleView = SpeechBubble(baseView: imageView, text: text6.text, fontSize: 20.0)
+                self.view.addSubview(bubbleView)
+                lastUsed = bubbleView
+                //view.sendSubview(toBack: text5)
+                //view.bringSubview(toFront: text6)
             }
             else if(index == 5){
-                view.sendSubview(toBack: text6)
-                view.bringSubview(toFront: text7)
+                self.view.sendSubview(toBack: lastUsed!)
+                let bubbleView = SpeechBubble(baseView: centro, text: text7.text, fontSize: 20.0)
+                self.view.addSubview(bubbleView)
+                lastUsed = bubbleView
+                //view.sendSubview(toBack: text6)
+                //view.bringSubview(toFront: text7)
             }
             else if(index == 6){
-                view.sendSubview(toBack: text7)
-                view.bringSubview(toFront: text8)
+                self.view.sendSubview(toBack: lastUsed!)
+                let bubbleView = SpeechBubble(baseView: imageView, text: text8.text, fontSize: 20.0)
+                self.view.addSubview(bubbleView)
+                lastUsed = bubbleView
+                //view.sendSubview(toBack: text7)
+                //view.bringSubview(toFront: text8)
             }
             else if(index == 7){
-                view.sendSubview(toBack: text8)
-                view.bringSubview(toFront: text9)
+                self.view.sendSubview(toBack: lastUsed!)
+                let bubbleView = SpeechBubble(baseView: imageView, text: text9.text, fontSize: 20.0)
+                self.view.addSubview(bubbleView)
+                lastUsed = bubbleView
+                //view.sendSubview(toBack: text8)
+                //view.bringSubview(toFront: text9)
             }
             else if(index == 8){
-                view.sendSubview(toBack: text9)
-                view.bringSubview(toFront: text10)
+                self.view.sendSubview(toBack: lastUsed!)
+                let bubbleView = SpeechBubble(baseView: centro, text: text10.text, fontSize: 20.0)
+                self.view.addSubview(bubbleView)
+                lastUsed = bubbleView
+                //view.sendSubview(toBack: text9)
+                //view.bringSubview(toFront: text10)
             }
             else if(index == 9){
-                view.sendSubview(toBack: text10)
-                view.bringSubview(toFront: text11)
+                self.view.sendSubview(toBack: lastUsed!)
+                let bubbleView = SpeechBubble(baseView: imageView, text: text11.text, fontSize: 20.0)
+                self.view.addSubview(bubbleView)
+                lastUsed = bubbleView
+                //view.sendSubview(toBack: text10)
+                //view.bringSubview(toFront: text11)
             } else {
                 performSegue(withIdentifier: "toGoodEnding", sender: self)
 
             }
         } else {
             if(index == 4){
-                view.sendSubview(toBack: text5)
-                view.bringSubview(toFront: text6)
+                self.view.sendSubview(toBack: lastUsed!)
+                let bubbleView = SpeechBubble(baseView: centro, text: text6.text, fontSize: 20.0)
+                self.view.addSubview(bubbleView)
+                lastUsed = bubbleView
+                //view.sendSubview(toBack: text5)
+                //view.bringSubview(toFront: text6)
             } else {
                 performSegue(withIdentifier: "toBadEnding", sender: self)
             }

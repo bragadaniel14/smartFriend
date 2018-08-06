@@ -14,6 +14,7 @@ class storyTimeViewController: UIViewController, UITextViewDelegate{
     var player: Character?
     var index: Int = 0
     var decision: Int = -1
+    var lastUsed: SpeechBubble?
     
     
     //MARK: IB variables
@@ -50,11 +51,11 @@ class storyTimeViewController: UIViewController, UITextViewDelegate{
     @IBAction func button1(_ sender: UIButton) {
         decision = 1
         text8.text = "In the beginning it was very rare. Now it is almost every day."
-        resize(textView: text8)
-        onTop(of: john, with: text8)
+        
         text9.text = "But it is fine. I guess I am already used to it."
-        resize(textView: text9)
-        onTop(of: john, with: text9)
+        /*resize(textView: text9)
+        onTop(of: john, with: text9)*/
+        
         final1.text = "That was a great attitude! You have shown to your friend that you care about him and that you are there for him"
         let newSize = final1.sizeThatFits(CGSize(width: 240, height: 250))
         final1.frame.size = newSize
@@ -66,8 +67,9 @@ class storyTimeViewController: UIViewController, UITextViewDelegate{
     @IBAction func button2(_ sender: UIButton) {
         decision = 2
         text8.text = "I guess you are right! I will try not to think about it."
-        resize(textView: text8)
-        onTop(of: john, with: text8)
+        /*resize(textView: text8)
+        onTop(of: john, with: text8)*/
+        
         final1.text = "Good job trying to cheer John up! However, you should try to ask more questions first to understand how your friend is feeling.  Maybe he already tried to forget about the messages but he can’t."
         let newSize = final1.sizeThatFits(CGSize(width: 240, height: 250))
         final1.frame.size = newSize
@@ -77,8 +79,10 @@ class storyTimeViewController: UIViewController, UITextViewDelegate{
     @IBAction func button3(_ sender: UIButton) {
         decision = 3
         text8.text = "Oh! You want to play games now? That’s probably a good idea..."
-        resize(textView: text8)
-        onTop(of: john, with: text8)
+        let bubbleView1 = SpeechBubble(baseView: john, text: text8.text, fontSize: 20.0)
+        john.superview!.addSubview(bubbleView1)
+        /*resize(textView: text8)
+        onTop(of: john, with: text8)*/
         final1.text = "You clearly care about your friend, but this solution is temporary. Your friend will receive more mean messages later and you won’t be there to help him forget about it."
         let newSize = final1.sizeThatFits(CGSize(width: 240, height: 250))
         final1.frame.size = newSize
@@ -103,28 +107,43 @@ class storyTimeViewController: UIViewController, UITextViewDelegate{
             view.bringSubview(toFront: bip)
             view.sendSubview(toBack: text2)
         case 3:
-            resize(textView: text3)
+            /* resize(textView: text3)
             onTop(of: john, with: text3)
-            view.bringSubview(toFront: text3)
+            view.bringSubview(toFront: text3) */
+            let bubbleView = SpeechBubble(baseView: john, text: text3.text, fontSize: 20.0)
+            john.superview!.addSubview(bubbleView)
+            lastUsed = bubbleView
+            
             view.sendSubview(toBack: bip)
         case 4:
-            resize(textView: text4)
+            /*resize(textView: text4)
             onTop(of: imageView, with: text4)
-            view.bringSubview(toFront: text4)
-            view.sendSubview(toBack: text3)
+            view.bringSubview(toFront: text4)*/
+            let bubbleView = SpeechBubble(baseView: imageView, text: text4.text, fontSize: 20.0)
+            imageView.superview!.addSubview(bubbleView)
+            view.sendSubview(toBack: lastUsed!)
+            lastUsed = bubbleView
+    
         case 5:
-            resize(textView: text5)
+            /*resize(textView: text5)
             onTop(of: john, with: text5)
-            view.bringSubview(toFront: text5)
-            view.sendSubview(toBack: text4)
+            view.bringSubview(toFront: text5)*/
+            let bubbleView = SpeechBubble(baseView: john, text: text5.text, fontSize: 20.0)
+            john.superview!.addSubview(bubbleView)
+            view.sendSubview(toBack: lastUsed!)
+            lastUsed = bubbleView
+            
         case 6:
-            resize(textView: text6)
+            /*resize(textView: text6)
             onTop(of: john, with: text6)
-            view.bringSubview(toFront: text6)
-            view.sendSubview(toBack: text5)
+            view.bringSubview(toFront: text6)*/
+            let bubbleView = SpeechBubble(baseView: john, text: text6.text, fontSize: 20.0)
+            john.superview!.addSubview(bubbleView)
+            view.sendSubview(toBack: lastUsed!)
+            lastUsed = bubbleView
         case 7:
             view.bringSubview(toFront: text7)
-            view.sendSubview(toBack: text6)
+            view.sendSubview(toBack: lastUsed!)
             view.bringSubview(toFront: buttons)
             button1.isEnabled = true
             button2.isEnabled = true
@@ -141,13 +160,19 @@ class storyTimeViewController: UIViewController, UITextViewDelegate{
     private func branching(){
         if(decision == 1){
             if (index == 7){
-                view.bringSubview(toFront: text8)
+                //view.bringSubview(toFront: text8)
+                let bubbleView1 = SpeechBubble(baseView: john, text: text8.text, fontSize: 20.0)
+                john.superview!.addSubview(bubbleView1)
+                lastUsed = bubbleView1
             } else if(index == 8){
-                view.bringSubview(toFront: text9)
-                view.sendSubview(toBack: text8)
+                //view.bringSubview(toFront: text9)
+                let bubbleView2 = SpeechBubble(baseView: john, text: text9.text, fontSize: 20.0)
+                john.superview!.addSubview(bubbleView2)
+                view.sendSubview(toBack: lastUsed!)
+                lastUsed = bubbleView2
             } else if(index == 9){
                 view.bringSubview(toFront: final1)
-                view.sendSubview(toBack: text9)
+                view.sendSubview(toBack: lastUsed!)
             } else if (index == 10){
                 print("time to print the ending")
                 onTop(of: investigator, with: final2)
@@ -161,19 +186,25 @@ class storyTimeViewController: UIViewController, UITextViewDelegate{
     
         } else if(decision == 2){
             if (index == 7){
-                view.bringSubview(toFront: text8)
+                //view.bringSubview(toFront: text8)
+                let bubbleView1 = SpeechBubble(baseView: john, text: text8.text, fontSize: 20.0)
+                john.superview!.addSubview(bubbleView1)
+                lastUsed = bubbleView1
             } else if (index == 8){
                 view.bringSubview(toFront: final1)
-                view.sendSubview(toBack: text8)
+                view.sendSubview(toBack: lastUsed!)
             } else {
                 performSegue(withIdentifier: "toScene2", sender: self)
             }
         } else if(decision == 3){
             if (index == 7){
-                view.bringSubview(toFront: text8)
+                //view.bringSubview(toFront: text8)
+                let bubbleView1 = SpeechBubble(baseView: john, text: text8.text, fontSize: 20.0)
+                john.superview!.addSubview(bubbleView1)
+                lastUsed = bubbleView1
             } else if (index == 8){
                 view.bringSubview(toFront: final1)
-                view.sendSubview(toBack: text8)
+                view.sendSubview(toBack: lastUsed!)
             } else {
                 performSegue(withIdentifier: "toScene2", sender: self
                 )
@@ -220,7 +251,6 @@ class storyTimeViewController: UIViewController, UITextViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         adjustImage(with: player?.gender)
-        text1.addPikeOnView(side: .Bottom)
         nextt.addTarget(self, action: #selector(storyTimeViewController.moveStory(button:))
             , for: UIControlEvents.touchUpInside)
         
