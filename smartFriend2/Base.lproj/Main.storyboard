@@ -228,6 +228,9 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="button1:" destination="wdm-8W-2ta" eventType="touchUpInside" id="kqy-Et-m9e"/>
@@ -248,6 +251,9 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="button2:" destination="wdm-8W-2ta" eventType="touchUpInside" id="9bK-Q5-0sf"/>
@@ -267,6 +273,9 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -318,7 +327,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="storyBackground1" translatesAutoresizingMaskIntoConstraints="NO" id="5Ov-r8-gEJ">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
-                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImH-pj-I2a">
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImH-pj-I2a">
                                 <rect key="frame" x="0.0" y="64" width="375" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.98489833292369644" blue="0.99344101970036391" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -454,7 +463,7 @@ want to play  with the other kids and usually just sits by himself on during the
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7n7-0K-gc0">
-                                <rect key="frame" x="261" y="617" width="98" height="50"/>
+                                <rect key="frame" x="277" y="617" width="98" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="aoX-NY-rjs"/>
                                     <constraint firstAttribute="width" secondItem="7n7-0K-gc0" secondAttribute="height" multiplier="229:117" id="ylc-8W-LFl"/>
@@ -469,14 +478,14 @@ want to play  with the other kids and usually just sits by himself on during the
                             <constraint firstItem="hyr-gr-oZb" firstAttribute="bottom" secondItem="umF-bj-zNO" secondAttribute="bottom" id="AyD-vz-PTw"/>
                             <constraint firstItem="hyr-gr-oZb" firstAttribute="trailing" secondItem="umF-bj-zNO" secondAttribute="trailing" id="BzB-lu-mdg"/>
                             <constraint firstItem="5Od-zB-HfG" firstAttribute="leading" secondItem="umF-bj-zNO" secondAttribute="leading" constant="200" id="F63-Xe-gyz"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="7n7-0K-gc0" secondAttribute="bottom" id="G59-mW-KCh"/>
                             <constraint firstItem="C3V-fQ-SFt" firstAttribute="trailing" secondItem="umF-bj-zNO" secondAttribute="trailing" id="PnF-bU-34W"/>
                             <constraint firstItem="C3V-fQ-SFt" firstAttribute="top" secondItem="umF-bj-zNO" secondAttribute="top" constant="15" id="T8J-8u-XGl"/>
                             <constraint firstItem="hyr-gr-oZb" firstAttribute="top" secondItem="Bvf-wy-pcc" secondAttribute="topMargin" id="aWh-k0-2S5"/>
                             <constraint firstItem="C3V-fQ-SFt" firstAttribute="leading" secondItem="umF-bj-zNO" secondAttribute="leading" id="fJB-OJ-z1i"/>
                             <constraint firstItem="umF-bj-zNO" firstAttribute="bottom" secondItem="5Od-zB-HfG" secondAttribute="bottom" constant="50" id="fzh-Q4-4Yj"/>
+                            <constraint firstItem="7n7-0K-gc0" firstAttribute="trailing" secondItem="umF-bj-zNO" secondAttribute="trailing" id="jRJ-cF-7fg"/>
                             <constraint firstItem="hyr-gr-oZb" firstAttribute="leading" secondItem="umF-bj-zNO" secondAttribute="leading" id="jSc-jk-d0o"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7n7-0K-gc0" secondAttribute="trailing" id="lcA-VY-HcN"/>
+                            <constraint firstItem="7n7-0K-gc0" firstAttribute="bottom" secondItem="umF-bj-zNO" secondAttribute="bottom" id="uTv-A9-4gk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="umF-bj-zNO"/>
                     </view>
@@ -593,6 +602,9 @@ want to play  with the other kids and usually just sits by himself on during the
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="action1:" destination="zTJ-t1-ZCo" eventType="touchUpInside" id="l4i-fu-siF"/>
@@ -613,6 +625,9 @@ want to play  with the other kids and usually just sits by himself on during the
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -758,7 +773,7 @@ happily with all the other kids.</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bw-s6-hdV">
-                                <rect key="frame" x="261" y="617" width="98" height="50"/>
+                                <rect key="frame" x="277" y="617" width="98" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Aid-98-kg7"/>
                                     <constraint firstAttribute="width" secondItem="7bw-s6-hdV" secondAttribute="height" multiplier="229:117" id="vsb-wO-4zn"/>
@@ -768,12 +783,13 @@ happily with all the other kids.</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="7bw-s6-hdV" secondAttribute="bottom" id="DRz-l5-tPU"/>
+                            <constraint firstItem="7bw-s6-hdV" firstAttribute="bottom" secondItem="mYC-MN-pjs" secondAttribute="bottom" id="0Qq-oy-2e8"/>
                             <constraint firstItem="sIm-zY-N2Q" firstAttribute="centerY" secondItem="mYC-MN-pjs" secondAttribute="centerY" id="LsM-Ov-3H1"/>
                             <constraint firstItem="c80-CX-oYZ" firstAttribute="centerY" secondItem="mYC-MN-pjs" secondAttribute="centerY" id="PYb-tR-8Ie"/>
                             <constraint firstItem="sIm-zY-N2Q" firstAttribute="leading" secondItem="mYC-MN-pjs" secondAttribute="leading" id="Sr8-Bs-F3O"/>
                             <constraint firstItem="c80-CX-oYZ" firstAttribute="leading" secondItem="mYC-MN-pjs" secondAttribute="leading" id="bN9-xM-WyA"/>
                             <constraint firstItem="Lkk-fB-vbe" firstAttribute="centerY" secondItem="mYC-MN-pjs" secondAttribute="centerY" id="dPD-x0-Jzn"/>
+                            <constraint firstItem="7bw-s6-hdV" firstAttribute="trailing" secondItem="mYC-MN-pjs" secondAttribute="trailing" id="deD-AB-60P"/>
                             <constraint firstItem="sIm-zY-N2Q" firstAttribute="trailing" secondItem="mYC-MN-pjs" secondAttribute="trailing" id="fmG-1Y-KAA"/>
                             <constraint firstItem="Lkk-fB-vbe" firstAttribute="leading" secondItem="mYC-MN-pjs" secondAttribute="leading" id="hRr-ck-KIg"/>
                             <constraint firstItem="Afj-cm-xUr" firstAttribute="top" secondItem="jK0-Qr-qOX" secondAttribute="topMargin" id="hyT-1N-ACf"/>
@@ -781,7 +797,6 @@ happily with all the other kids.</string>
                             <constraint firstItem="Afj-cm-xUr" firstAttribute="bottom" secondItem="mYC-MN-pjs" secondAttribute="bottom" id="lUG-NP-TgF"/>
                             <constraint firstItem="c80-CX-oYZ" firstAttribute="trailing" secondItem="mYC-MN-pjs" secondAttribute="trailing" id="nop-B2-vX2"/>
                             <constraint firstItem="Afj-cm-xUr" firstAttribute="leading" secondItem="mYC-MN-pjs" secondAttribute="leading" id="oVu-XR-b73"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7bw-s6-hdV" secondAttribute="trailing" id="zJ9-84-6Mx"/>
                             <constraint firstItem="Afj-cm-xUr" firstAttribute="trailing" secondItem="mYC-MN-pjs" secondAttribute="trailing" id="zLW-xV-88q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mYC-MN-pjs"/>
@@ -976,11 +991,11 @@ happily with all the other kids.</string>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3a-ih-JL6">
-                                <rect key="frame" x="140.5" y="618" width="93" height="39"/>
-                                <color key="backgroundColor" red="0.0" green="0.3160935836856808" blue="0.66381962435233155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <rect key="frame" x="274" y="626" width="101" height="41"/>
+                                <color key="backgroundColor" red="0.3934318923434606" green="0.59990772173730189" blue="0.80804727979274615" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="End Story">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
@@ -994,15 +1009,15 @@ happily with all the other kids.</string>
                         <constraints>
                             <constraint firstItem="gpP-Nj-UhQ" firstAttribute="leading" secondItem="UmA-Gw-me6" secondAttribute="leading" id="09c-v8-u0j"/>
                             <constraint firstItem="gpP-Nj-UhQ" firstAttribute="trailing" secondItem="UmA-Gw-me6" secondAttribute="trailing" id="1tT-nZ-w1r"/>
+                            <constraint firstItem="I3a-ih-JL6" firstAttribute="trailing" secondItem="UmA-Gw-me6" secondAttribute="trailing" id="23v-m1-wif" userLabel="Safe Area.trailing  = End Button.trailing"/>
                             <constraint firstItem="sdE-qX-8ui" firstAttribute="centerY" secondItem="59Q-R3-jNo" secondAttribute="centerY" id="4A3-vw-ytQ"/>
                             <constraint firstItem="sdE-qX-8ui" firstAttribute="leading" secondItem="UmA-Gw-me6" secondAttribute="leading" id="6c5-sL-bGf"/>
                             <constraint firstItem="59Q-R3-jNo" firstAttribute="trailing" secondItem="UmA-Gw-me6" secondAttribute="trailing" id="7mb-7m-1fD"/>
                             <constraint firstItem="59Q-R3-jNo" firstAttribute="top" secondItem="i8o-UP-BLk" secondAttribute="topMargin" id="Cds-mn-BGw"/>
                             <constraint firstItem="gpP-Nj-UhQ" firstAttribute="bottom" secondItem="sdE-qX-8ui" secondAttribute="top" constant="-20" id="Dtj-xK-gvJ"/>
+                            <constraint firstItem="I3a-ih-JL6" firstAttribute="bottom" secondItem="UmA-Gw-me6" secondAttribute="bottom" id="MFJ-3v-ifh"/>
                             <constraint firstItem="59Q-R3-jNo" firstAttribute="bottom" secondItem="UmA-Gw-me6" secondAttribute="bottom" id="bhK-Cb-Jn4"/>
-                            <constraint firstItem="I3a-ih-JL6" firstAttribute="centerX" secondItem="59Q-R3-jNo" secondAttribute="centerX" id="eVe-xi-ABv"/>
                             <constraint firstItem="59Q-R3-jNo" firstAttribute="leading" secondItem="UmA-Gw-me6" secondAttribute="leading" id="pI5-LA-ZDd"/>
-                            <constraint firstItem="I3a-ih-JL6" firstAttribute="bottom" secondItem="59Q-R3-jNo" secondAttribute="bottom" constant="-10" id="qrE-6v-Bio"/>
                             <constraint firstItem="UmA-Gw-me6" firstAttribute="trailing" secondItem="sdE-qX-8ui" secondAttribute="trailing" id="zdl-Ah-pqX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UmA-Gw-me6"/>
@@ -1060,7 +1075,7 @@ happily with all the other kids.</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyT-O9-W3n">
-                                <rect key="frame" x="261" y="617" width="98" height="50"/>
+                                <rect key="frame" x="277" y="617" width="98" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dyT-O9-W3n" secondAttribute="height" multiplier="229:117" id="fpx-W8-6gC"/>
                                     <constraint firstAttribute="height" constant="50" id="m9a-uz-rG9"/>
@@ -1072,15 +1087,15 @@ happily with all the other kids.</string>
                         <constraints>
                             <constraint firstItem="Exo-D7-FgF" firstAttribute="leading" secondItem="7lX-4W-w9L" secondAttribute="leading" id="2my-cB-zHk"/>
                             <constraint firstItem="7lX-4W-w9L" firstAttribute="trailing" secondItem="Exo-D7-FgF" secondAttribute="trailing" id="3g1-C2-L5b"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dyT-O9-W3n" secondAttribute="trailing" id="8Yk-NH-8XQ"/>
                             <constraint firstItem="vAX-Mm-O5Q" firstAttribute="leading" secondItem="7lX-4W-w9L" secondAttribute="leading" id="G1Q-s5-fKM"/>
                             <constraint firstItem="10i-Vw-wll" firstAttribute="trailing" secondItem="7lX-4W-w9L" secondAttribute="trailing" id="LL6-kC-UBZ"/>
                             <constraint firstItem="10i-Vw-wll" firstAttribute="top" secondItem="Gzk-fS-FfX" secondAttribute="topMargin" id="QI0-MM-hcH"/>
+                            <constraint firstItem="dyT-O9-W3n" firstAttribute="trailing" secondItem="7lX-4W-w9L" secondAttribute="trailing" id="Tns-8T-Pru"/>
                             <constraint firstItem="vif-9E-KUz" firstAttribute="leading" secondItem="7lX-4W-w9L" secondAttribute="leading" id="ZV7-IL-LqZ"/>
                             <constraint firstItem="7lX-4W-w9L" firstAttribute="trailing" secondItem="vAX-Mm-O5Q" secondAttribute="trailing" id="bGE-1k-6QL"/>
                             <constraint firstItem="vif-9E-KUz" firstAttribute="centerY" secondItem="7lX-4W-w9L" secondAttribute="centerY" id="frc-Pw-J7k"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="dyT-O9-W3n" secondAttribute="bottom" id="fsF-to-O4Q"/>
                             <constraint firstItem="10i-Vw-wll" firstAttribute="bottom" secondItem="7lX-4W-w9L" secondAttribute="bottom" id="hUQ-DQ-zhr"/>
+                            <constraint firstItem="dyT-O9-W3n" firstAttribute="bottom" secondItem="7lX-4W-w9L" secondAttribute="bottom" id="ilF-Oa-fAj"/>
                             <constraint firstItem="Exo-D7-FgF" firstAttribute="centerY" secondItem="7lX-4W-w9L" secondAttribute="centerY" id="r3D-xe-QdR"/>
                             <constraint firstItem="vAX-Mm-O5Q" firstAttribute="centerY" secondItem="7lX-4W-w9L" secondAttribute="centerY" id="tBv-vy-YTV"/>
                             <constraint firstItem="10i-Vw-wll" firstAttribute="leading" secondItem="7lX-4W-w9L" secondAttribute="leading" id="xsG-rf-9gG"/>
@@ -1170,7 +1185,7 @@ happily with all the other kids.</string>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6g-Ov-rmk">
-                                <rect key="frame" x="261" y="617" width="98" height="50"/>
+                                <rect key="frame" x="277" y="617" width="98" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="00v-md-M2n"/>
                                     <constraint firstAttribute="width" secondItem="R6g-Ov-rmk" secondAttribute="height" multiplier="229:117" id="hdQ-dP-Vvn"/>
@@ -1180,6 +1195,7 @@ happily with all the other kids.</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="R6g-Ov-rmk" firstAttribute="trailing" secondItem="DPR-uq-CED" secondAttribute="trailing" id="36l-Bl-UJG"/>
                             <constraint firstItem="DPR-uq-CED" firstAttribute="bottom" secondItem="r90-yK-S1m" secondAttribute="bottom" constant="50" id="7mI-Ud-BPF"/>
                             <constraint firstItem="2x4-1D-xOu" firstAttribute="centerX" secondItem="DPR-uq-CED" secondAttribute="centerX" id="HC7-IU-mE4"/>
                             <constraint firstItem="qu5-oH-u9H" firstAttribute="leading" secondItem="DPR-uq-CED" secondAttribute="leading" id="Lml-D0-GEa"/>
@@ -1188,8 +1204,7 @@ happily with all the other kids.</string>
                             <constraint firstItem="2x4-1D-xOu" firstAttribute="centerY" secondItem="DPR-uq-CED" secondAttribute="centerY" id="bHa-Gw-vn7"/>
                             <constraint firstItem="qu5-oH-u9H" firstAttribute="bottom" secondItem="DPR-uq-CED" secondAttribute="bottom" id="bxJ-Qw-aqJ"/>
                             <constraint firstItem="qu5-oH-u9H" firstAttribute="top" secondItem="GyB-sg-Dvs" secondAttribute="topMargin" id="lvv-5M-u6G"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="R6g-Ov-rmk" secondAttribute="bottom" id="n4L-aS-1G3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="R6g-Ov-rmk" secondAttribute="trailing" id="pLG-dI-cLD"/>
+                            <constraint firstItem="R6g-Ov-rmk" firstAttribute="bottom" secondItem="DPR-uq-CED" secondAttribute="bottom" id="nfl-9b-bD7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DPR-uq-CED"/>
                     </view>
@@ -3872,6 +3887,6 @@ AAAAAAAAAAAAAAJA+Q
         <image name="storyBackground4" width="756" height="457"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bc4-ej-cbc"/>
+        <segue reference="ZbL-b7-Fk2"/>
     </inferredMetricsTieBreakers>
 </document>

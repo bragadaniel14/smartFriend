@@ -79,8 +79,7 @@ class storyTimeViewController: UIViewController, UITextViewDelegate{
     @IBAction func button3(_ sender: UIButton) {
         decision = 3
         text8.text = "Oh! You want to play games now? That’s probably a good idea..."
-        let bubbleView1 = SpeechBubble(baseView: john, text: text8.text, fontSize: 20.0)
-        john.superview!.addSubview(bubbleView1)
+        
         /*resize(textView: text8)
         onTop(of: john, with: text8)*/
         final1.text = "You clearly care about your friend, but this solution is temporary. Your friend will receive more mean messages later and you won’t be there to help him forget about it."
@@ -203,6 +202,7 @@ class storyTimeViewController: UIViewController, UITextViewDelegate{
                 john.superview!.addSubview(bubbleView1)
                 lastUsed = bubbleView1
             } else if (index == 8){
+                print("right before it doesn't work")
                 view.bringSubview(toFront: final1)
                 view.sendSubview(toBack: lastUsed!)
             } else {

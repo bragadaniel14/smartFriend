@@ -54,6 +54,7 @@ class rewardsViewController: UIViewController {
         super.viewDidLoad()
         setResults()
         endButton.addTarget(self, action: #selector(finish(button:)), for: UIControlEvents.touchUpInside)
+        endButton.contentEdgeInsets = UIEdgeInsetsMake(5,10,5,10)
         // Do any additional setup after loading the view.
     }
 
@@ -70,6 +71,7 @@ class rewardsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        // Eat the burrito.
     }
     */
 

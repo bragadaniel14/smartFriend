@@ -8,7 +8,7 @@
 import UIKit
 
 class SpeechBubble: UIView {
-    let strokeColor: UIColor = UIColor.gray
+    let strokeColor: UIColor = UIColor.black
     let fillColor: UIColor = UIColor.white
     var triangleHeight: CGFloat!
     var radius: CGFloat!
@@ -42,6 +42,10 @@ class SpeechBubble: UIView {
         
         
         let label = UITextView()
+        label.isEditable = false
+        label.isSelectable = false
+        label.isScrollEnabled = false
+        label.isUserInteractionEnabled = false
         label.font = UIFont.systemFont(ofSize: fontSize)
         label.text = text
         let newSize = label.sizeThatFits(CGSize(width: 200, height: 60))
